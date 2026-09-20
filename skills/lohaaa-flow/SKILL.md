@@ -1,5 +1,5 @@
 ---
-name: software-delivery-workflow
+name: lohaaa-flow
 description: 以需求文件为唯一事实来源，指导软件需求从通俗化理解、方案调研与比较、功能拆分、项目和模块设计，到页面或 API 单元实现、两级验收、代码与页面质量检查以及发布准备。适用于实现新功能、独立模块、页面功能、API 客户端或后端 API，以及需要制定完整交付和上线流程的任务。
 license: MIT
 metadata:

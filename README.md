@@ -4,7 +4,7 @@ lohaaa 的个人 Agent Skills 仓库。
 
 ## 软件需求交付工作流
 
-`software-delivery-workflow` 用于指导软件需求从理解、调研和拆分，到逐单元开发、验收、质量检查及生产发布。需求文件中的每个最小可交付单元都附带进度表，避免维护独立且容易失去同步的进度记录。
+`lohaaa-flow` 是一个覆盖需求分析、开发实施、验收和发布的多阶段技能。需求文件中的每个最小可交付单元都附带进度表，避免维护独立且容易失去同步的进度记录。
 
 ### 安装
 
@@ -17,19 +17,19 @@ npx skills add lohaaa/skills --list
 安装到当前项目：
 
 ```bash
-npx skills add lohaaa/skills --skill software-delivery-workflow
+npx skills add lohaaa/skills --skill lohaaa-flow
 ```
 
 全局安装并跳过交互确认：
 
 ```bash
-npx skills add lohaaa/skills --skill software-delivery-workflow -g -y
+npx skills add lohaaa/skills --skill lohaaa-flow -g -y
 ```
 
 也可以直接使用而不安装：
 
 ```bash
-npx skills use lohaaa/skills@software-delivery-workflow
+npx skills use lohaaa/skills@lohaaa-flow
 ```
 
 ## 能力范围
@@ -47,7 +47,7 @@ npx skills use lohaaa/skills@software-delivery-workflow
 
 ```text
 skills/
-└─ software-delivery-workflow/
+└─ lohaaa-flow/
    ├─ SKILL.md
    ├─ references/
    │  ├─ 01-需求分析与方案设计.md
