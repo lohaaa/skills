@@ -13,7 +13,7 @@ lohaaa 的个人 Agent Skills 仓库。
 | `lohaaa-plan` | 需求分析与方案设计 | 方案决策、模块边界、功能单元和需求文件 |
 | `lohaaa-build` | 开发实施 | 已实现并实际验证、等待验收的功能单元 |
 | `lohaaa-check` | 验收与质量检查 | 单元及模块验收结论、代码和页面质量结果 |
-| `lohaaa-release` | 发布准备与人工交接 | 发布、迁移、人工生产验证和回滚清单；不执行生产操作 |
+| `lohaaa-release` | 发布前准备 | 迁移、配置、兼容性、发布顺序、人工负责人和回滚预案 |
 
 阶段顺序：
 
@@ -23,7 +23,7 @@ lohaaa-plan → lohaaa-build → lohaaa-check → lohaaa-release
 
 所有阶段只更新同一份需求文件，不建立独立进度表。验收失败时从 `lohaaa-check` 返回 `lohaaa-build` 修复，再重新验收。
 
-`lohaaa-release` 不允许 AI 登录或操作生产环境，也不允许 AI 执行生产发布、迁移、回滚或生产验证。生产步骤必须由用户或授权操作人员执行，AI 只准备清单并记录人工提供的结果。
+`lohaaa-release` 只负责发布前分析和材料交接，不进入生产环境，也不包含生产操作、发布后任务或生产结果记录。
 
 ### 安装
 
