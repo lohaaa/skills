@@ -4,7 +4,24 @@ lohaaa 的个人 Agent Skills 仓库。
 
 ## 软件需求交付工作流
 
-`lohaaa-flow` 是一个覆盖需求分析、开发实施、验收和发布的多阶段技能。需求文件中的每个最小可交付单元都附带进度表，避免维护独立且容易失去同步的进度记录。
+`lohaaa-flows` 是四个独立 Agent Skills 的分组目录，不是一个统一技能。每个技能负责一个阶段，通过同一份需求文件衔接；需求文件中的每个最小可交付单元都附带自己的进度表。
+
+### 阶段技能
+
+| 技能 | 阶段 | 主要产出 |
+|---|---|---|
+| `lohaaa-plan` | 需求分析与方案设计 | 方案决策、模块边界、功能单元和需求文件 |
+| `lohaaa-build` | 开发实施 | 已实现并实际验证、等待验收的功能单元 |
+| `lohaaa-check` | 验收与质量检查 | 单元及模块验收结论、代码和页面质量结果 |
+| `lohaaa-release` | 发布准备与上线 | 发布步骤、迁移、生产验证和回滚结果 |
+
+阶段顺序：
+
+```text
+lohaaa-plan → lohaaa-build → lohaaa-check → lohaaa-release
+```
+
+所有阶段只更新同一份需求文件，不建立独立进度表。验收失败时从 `lohaaa-check` 返回 `lohaaa-build` 修复，再重新验收。
 
 ### 安装
 
@@ -14,48 +31,40 @@ lohaaa 的个人 Agent Skills 仓库。
 npx skills add lohaaa/skills --list
 ```
 
-安装到当前项目：
+安装全部工作流技能：
 
 ```bash
-npx skills add lohaaa/skills --skill lohaaa-flow
+npx skills add lohaaa/skills --skill lohaaa-plan --skill lohaaa-build --skill lohaaa-check --skill lohaaa-release
 ```
 
 全局安装并跳过交互确认：
 
 ```bash
-npx skills add lohaaa/skills --skill lohaaa-flow -g -y
+npx skills add lohaaa/skills --skill lohaaa-plan --skill lohaaa-build --skill lohaaa-check --skill lohaaa-release -g -y
 ```
 
-也可以直接使用而不安装：
+也可以只安装或直接使用某个阶段：
 
 ```bash
-npx skills use lohaaa/skills@lohaaa-flow
+npx skills add lohaaa/skills --skill lohaaa-plan
+npx skills use lohaaa/skills@lohaaa-plan
 ```
-
-## 能力范围
-
-- 用通俗语言澄清需求本质、范围和完成标准
-- 调研并比较常用方案与现代化方案
-- 从最大需求集逐层拆分到页面或 API 单元
-- 判断现有模块、新模块或独立项目边界
-- 按官方规范、项目约定和 Clean Code 实施
-- 执行页面、API 客户端或后端 API 的纵向交付
-- 进行单元验收、模块验收及代码和页面质量检查
-- 检查数据库、配置、基础设施、发布后操作和回滚路径
 
 ## 仓库结构
 
 ```text
 skills/
-└─ lohaaa-flow/
-   ├─ SKILL.md
-   ├─ references/
-   │  ├─ 01-需求分析与方案设计.md
-   │  ├─ 02-开发实施规范.md
-   │  ├─ 03-验收与质量检查.md
-   │  └─ 04-发布准备与上线.md
-   └─ assets/
-      └─ 需求文件模板.md
+└─ lohaaa-flows/
+   ├─ lohaaa-plan/
+   │  ├─ SKILL.md
+   │  └─ assets/
+   │     └─ 需求文件模板.md
+   ├─ lohaaa-build/
+   │  └─ SKILL.md
+   ├─ lohaaa-check/
+   │  └─ SKILL.md
+   └─ lohaaa-release/
+      └─ SKILL.md
 ```
 
 ## 规范兼容
